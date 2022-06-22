@@ -7,6 +7,7 @@ body{
     position:relative;
     background: #f8f8ff;
     font-family: 'Montserrat', sans-serif;
+    min-height:100vh;
 }
 header h1{
     margin-bottom: 1em;
@@ -14,9 +15,9 @@ header h1{
     color:grey;
 }
 /* hide the modal when the main portfolio is displayed*/
-.hidden{
+/*.hidden{
     display:none;
-}
+}*/
 /* CLASS */
 .grid-container{
     display: grid;
