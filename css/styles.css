@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+body{
+    background: #f8f8ff;
+    font-family: 'Montserrat', sans-serif;
+}
+/* hide the modal when the main portfolio is displayed*/
+.hidden{
+    display:none;
+}
+
+
+.grid-container{
+    display: grid;
+    height:100%;
+    grid-template-columns: repeat(3,2fr);
+    grid-template-areas: main;
+    gap:20px;
+}
