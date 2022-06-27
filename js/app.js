@@ -2,7 +2,7 @@
 let employees = [];
 console.log('This array from API ',employees)
 const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture,
-email, location, phone, dob &noinfo &nat=US`
+email, location, phone, dob &noinfo &nat=US`;
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
@@ -14,6 +14,7 @@ fetch(urlAPI)
     .then(displayEmployees)
     .catch(err => console.log(err))
 
+    // FUNCTION TO DISPLAY EMPLOYEES
 function displayEmployees(employeeData){
     employees = employeeData;
     //store the employee HTML as we create it
@@ -39,12 +40,16 @@ function displayEmployees(employeeData){
     });
     gridContainer.innerHTML = employeeHTML;
 }
-
-function displaymModal(index){
+ // FUNCTION TO DISPLAY MODAL
+function displayModal(index){
 
     // use object destructuring make our template literal cleaner
-    let {name,dob,phone,email, location:{city,
-    street, state, postcode}, picture } = employees[index];
+    let {name,
+        dob,
+        phone,
+        email,
+        location:{city,
+                street, state, postcode}, picture } = employees[index];
 
     let date = new Date(dob.date);
     const modalHTML = `
@@ -62,3 +67,19 @@ function displaymModal(index){
             overlay.classList.remove("hidden");
             modalContainer.innerHTML = modalHTML;
 }
+/* EVENTLISTENER FOR THE CARD */
+gridContainer.addEventListener('click',(e) =>{
+    // make sure the click is not on the gridContainer itself
+    if(e.target != gridContainer)
+    {
+        // select the card element based on its proximity to actual element
+        const card = e.tatget.closet(".card");
+        const index = card.getAttribute("data-index");
+        displayModal(index);
+    }
+});
+// EVENTLISTENER FOR THE MODAL CLOSE
+modalClose.addEventListener('click', () =>{
+    overlay.classList.add("hidden");
+});
+
