@@ -19,13 +19,14 @@ img {
     height:100px;
     border-radius: 50%;
 }
-
+.hidden{
+    display: none;
+}
 /* CLASS */
 .grid-container{
     display: grid;
     height:100%;
     grid-template-columns: repeat(3,1fr);
-    
 }
 
 .card {
@@ -37,6 +38,7 @@ img {
     box-shadow: 2px 1px teal;
     border-radius: 5px;
     background: mistyrose;
+   
 }
 .text-container{
     margin-left:25px;
@@ -70,6 +72,12 @@ p{
     border:1px solid #778;
     border-radius:5px;
     padding:30px 20px;
+    background:lightgray;
+    transition: background-color,4s,ease-in-out,1s;
+}
+.modal:hover{
+    background-color: cadetblue;
+  
 }
 .modal-close {
     position:absolute;
