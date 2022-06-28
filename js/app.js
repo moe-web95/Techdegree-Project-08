@@ -48,7 +48,7 @@ function displayModal(index){
         dob,
         phone,
         email,
-        location:{city, street, state, postcode}, picture } = employees[index];
+        location: {city, street, state, postcode}, picture } = employees[index];
 
     let date = new Date(dob.date);
     const modalHTML = `

@@ -19,10 +19,7 @@ img {
     height:100px;
     border-radius: 50%;
 }
-/* hide the modal when the main portfolio is displayed*/
-/*.hidden{
-    display:none;
-}*/
+
 /* CLASS */
 .grid-container{
     display: grid;
