@@ -10,8 +10,8 @@ const modalClose = document.querySelector(".modal-close");
 
 fetch(urlAPI)
     .then(res => res.json())
-    .then(res => console.log('From urlAPI ', res.results))
-    .then(displayEmployees)
+    .then(res =>  res.results)
+    .then((data) => displayEmployees(data))
     .catch(err => console.log(err))
 
     // FUNCTION TO DISPLAY EMPLOYEES
@@ -48,20 +48,20 @@ function displayModal(index){
         dob,
         phone,
         email,
-        location:{city,
-                street, state, postcode}, picture } = employees[index];
+        location:{city, street, state, postcode}, picture } = employees[index];
 
     let date = new Date(dob.date);
     const modalHTML = `
+            <div class="modal-content">
             <img src="${picture.large}" alt="" class="avatar">
             <div class="text-container">
-                <h2 class="name">${name.first} ${name.second}</h2>
+                <h2 class="name">${name.first} ${name.last}</h2>
                 <p class="email">${email}</p>
                 <p class="address">${city}</p>
                 <hr />
                 <p>${phone}</p>
                 <p class="address">${state} ${postcode}</p>
-                <p>${date.getMonth()} / ${date.getDate()} / ${date.getFullYear()}</p>
+                <p>Birthday: ${date.getMonth() } / ${date.getDate()} / ${date.getFullYear()}</p>
             </div>
             `;
             overlay.classList.remove("hidden");
