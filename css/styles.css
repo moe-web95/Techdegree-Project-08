@@ -33,7 +33,7 @@ img {
     display: flex;
     justify-content: center;
     padding:20px;
-    margin:  15px;
+    margin:  10px;
     border: 1px solid grey;
     box-shadow: 2px 1px teal;
     border-radius: 5px;
@@ -62,10 +62,11 @@ p{
     left:0;
     bottom:0;
     background :rbga(100,100,100,.4);
+    
 }
 .modal {
     width: 375px;
-    margin:15% auto auto;
+    margin:8% auto auto;
     position:relative;
     text-align:center;
     background: #fff;
@@ -73,12 +74,9 @@ p{
     border-radius:5px;
     padding:30px 20px;
     background:lightgray;
-    transition: background-color,4s,ease-in-out,1s;
+   
 }
-.modal:hover{
-    background-color: cadetblue;
-  
-}
+
 .modal-close {
     position:absolute;
     top:10px;
